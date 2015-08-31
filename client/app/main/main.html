@@ -1,0 +1,47 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<header class="hero-unit" id="banner">
+  <div class="container">
+    <div class="alert alert-danger" ng-if="err" id="alert" role="alert">
+      {{error}}
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <div class="row">
+    <label for="repo">Enter the repository name
+    <input type="text" class="form-control" id="repo" placeholder="Eg. joyent/node">
+    </label>
+    <button class="btn btn-primary" id="submit">Submit</button>
+  </div>
+  <div class="row">
+    <table ng-if="fetchedDetails" class="table table-hover">
+      <tbody>
+        <tr>
+          <td>Total no. of open issues</td><td>{{issuedetails.total_open_issues}}</td>
+        </tr>
+        <tr>
+          <td>Number of open issues that were opened in the last 24 hours</td><td>{{issuedetails.one_day}}</td>
+        </tr>  
+        <tr>
+          <td>Number of open issues that were opened more than 24 hours ago but less than 7 days ago</td><td>{{issuedetails.one_week}}</td>
+        </tr>
+        <tr>
+          <td>Number of open issues that were opened more than 7 days ago</td>
+          <td>{{issuedetails.before_one_week}}</td> 
+        </tr>  
+      </tbody>
+    </table>
+      
+
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+      <p>Angular Fullstack v2.0.13 |
+        <a href="https://twitter.com/tyhenkel">@tyhenkel</a> |
+         <a href="https://github.com/DaftMonk/generator-angular-fullstack/issues?state=open">Issues</a></p>
+  </div>
+</footer>
