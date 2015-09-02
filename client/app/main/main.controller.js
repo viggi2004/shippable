@@ -9,7 +9,7 @@ angular.module('shippableApp')
 
       $scope.fetchedDetails = false;
       var repositoryname = $('#repo').val().trim();
-      $http.get('api/things/getissues?repo='+encodeURIComponent(repositoryname)).success(function(json) {
+      $http.get('api/getissues?repo='+encodeURIComponent(repositoryname)).success(function(json) {
         console.log(json);
         event.target.disabled = false;
         if(json.error==null)
