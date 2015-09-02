@@ -12,9 +12,9 @@ Program flow:
 3. Follow the link in headers and make paginated git.issues API call if there are more than one page of result.
 4. Manually filter the data that are returned by the above calls, based on created_at field, since the git.issues API returns the issues CREATED and MODIFIED after the given date.
 5. All of these run asynchronously and return the data to a final callback function where we will have the following data.
-  a). total number of issues opened.
-  b). issues opened in last 1 day.
-  c). issues opened in last 1 week.
+  a). total number of issues opened
+  b). issues opened in last 1 day
+  c). issues opened in last 1 week (which includes issues opened in last 1 day)
 6. With this data, we can find the required fields as follows:
 
   a). No of issues opened more than 7 days ago = total no of issues opened - issues opened in last 1 week
