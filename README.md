@@ -1,7 +1,7 @@
 # shippable
 programming assignment for shippable
 
-Live URL: http://ec2-52-0-101-205.compute-1.amazonaws.com:9000
+Live URL: http://52.0.101.205:9000
 
 Note: octonode library is used for making git API calls.
 
