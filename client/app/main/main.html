@@ -2,7 +2,7 @@
 
 <header class="hero-unit" id="banner">
   <div class="container">
-    <div class="alert alert-danger" ng-if="err" id="alert" role="alert">
+    <div class="alert alert-danger" ng-if="error" id="alert" role="alert">
       {{error}}
     </div>
   </div>
@@ -22,10 +22,10 @@
           <td>Total no. of open issues</td><td>{{issuedetails.total_open_issues}}</td>
         </tr>
         <tr>
-          <td>Number of open issues that were opened in the last 24 hours</td><td>{{issuedetails.one_day}}</td>
+          <td>Number of open issues that were opened in the last 24 hours</td><td>{{issuedetails.within_one_day}}</td>
         </tr>  
         <tr>
-          <td>Number of open issues that were opened more than 24 hours ago but less than 7 days ago</td><td>{{issuedetails.one_week}}</td>
+          <td>Number of open issues that were opened more than 24 hours ago but less than 7 days ago</td><td>{{issuedetails.within_one_week}}</td>
         </tr>
         <tr>
           <td>Number of open issues that were opened more than 7 days ago</td>
@@ -40,8 +40,6 @@
 
 <footer class="footer">
   <div class="container">
-      <p>Angular Fullstack v2.0.13 |
-        <a href="https://twitter.com/tyhenkel">@tyhenkel</a> |
-         <a href="https://github.com/DaftMonk/generator-angular-fullstack/issues?state=open">Issues</a></p>
+      
   </div>
 </footer>

@@ -4,14 +4,24 @@ angular.module('shippableApp')
   .controller('MainCtrl', function ($scope, $http) {
     
     $('#submit').on('click',function(event){
+      console.log(event);
+      event.target.disabled = true;
+
       $scope.fetchedDetails = false;
-      var repositoryname = $('#repo').val();
+      var repositoryname = $('#repo').val().trim();
       $http.get('api/things/getissues?repo='+encodeURIComponent(repositoryname)).success(function(json) {
         console.log(json);
-        $scope.issuedetails   = json;
-        $scope.fetchedDetails = true;
-        delete $scope.error;
-
+        event.target.disabled = false;
+        if(json.error==null)
+        {  
+          $scope.issuedetails   = json.data;
+          $scope.fetchedDetails = true;
+          delete $scope.error;
+        }
+        else
+        {
+          $scope.error = json.error;
+        }
       }).error(function(err){
          $scope.error = err;
       });
